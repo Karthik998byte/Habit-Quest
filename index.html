@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habit Quest – Level Up Your Life</title>
+  <meta name="description" content="Track habits, build streaks, and level up your life with Habit Quest." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/all.css" />
+</head>
+<body>
+
+  <!-- AUTH ROOT (Full screen) -->
+  <div id="auth-root" class="hidden"></div>
+
+  <!-- APP ROOT -->
+  <div id="app" class="hidden">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sidebar-logo">
+        <img src="logo.png" alt="Habit Quest" class="sidebar-logo-img" />
+      </div>
+      
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Quest Menu</div>
+        <div class="nav-item active" data-page="dashboard">
+          <span class="icon">📊</span>
+          <span>Dashboard</span>
+        </div>
+        <div class="nav-item" data-page="habits">
+          <span class="icon">🎯</span>
+          <span>My Habits</span>
+        </div>
+        <div class="nav-item" data-page="leaderboard">
+          <span class="icon">🏆</span>
+          <span>Leaderboard</span>
+        </div>
+        
+        <div class="nav-section-label">Personal</div>
+        <div class="nav-item" data-page="profile">
+          <span class="icon">👤</span>
+          <span>Profile</span>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini" data-page="profile">
+          <div class="user-mini-avatar" id="sidebar-user-avatar">?</div>
+          <div class="user-mini-info">
+            <div class="name" id="sidebar-user-name">Hero Name</div>
+            <div class="email" id="sidebar-user-email">hero@quest.com</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div id="sidebar-overlay"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+      <header id="navbar">
+        <div class="navbar-left">
+          <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+          </div>
+          <h1 class="page-title" id="page-title">Dashboard</h1>
+        </div>
+
+        <div class="navbar-right">
+          <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Search quests..." id="nav-search" />
+          </div>
+          
+          <div class="theme-toggle" id="navbar-theme-toggle" title="Toggle Theme"></div>
+          
+          <!-- Notification Bell – clicking opens the dropdown -->
+          <div class="notif-wrap" id="notif-wrap">
+            <div class="notif-btn" id="notif-btn" title="Notifications">
+              🔔
+              <!-- Red badge: shows unread count, hidden when 0 -->
+              <div class="notif-dot" id="notif-badge" style="display:none;"></div>
+            </div>
+
+            <!-- Notification Dropdown Panel (anchored inside notif-wrap) -->
+            <div class="notif-dropdown" id="notif-dropdown" style="display:none;">
+              <div class="notif-dropdown-header">
+                <span class="notif-dropdown-title">🔔 Notifications</span>
+                <button class="notif-clear-btn" id="notif-clear-btn">Clear All</button>
+              </div>
+              <div class="notif-list" id="notif-list">
+                <!-- Notification items injected here by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div id="page-content">
+        <!-- Dynamic content renders here -->
+      </div>
+    </main>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/all.js"></script>
+</body>
+</html>
